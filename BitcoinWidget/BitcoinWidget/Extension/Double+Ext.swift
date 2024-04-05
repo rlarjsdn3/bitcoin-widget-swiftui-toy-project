@@ -10,7 +10,10 @@ import Foundation
 extension Double {
     
     var toCurrency: String {
-        "$" + String(format: "%.2f", self)
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        let string = formatter.string(from: self as NSNumber) ?? "0"
+        return "$" + string
     }
     
     var toPercentage: String {
