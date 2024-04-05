@@ -9,27 +9,46 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), emoji: "😀")
+    func placeholder(in context: Context) -> BitcoinEntry {
+        BitcoinEntry()
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), emoji: "😀")
+    func getSnapshot(in context: Context, completion: @escaping (BitcoinEntry) -> ()) {
+        let entry = BitcoinEntry()
         completion(entry)
     }
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> ()) {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
+    func getTimeline(in context: Context, completion: @escaping (Timeline<BitcoinEntry>) -> ()) {
         let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, emoji: "😀")
-            entries.append(entry)
+        
+        Task(priority: .background) {
+            if var entry = try? await fetchBitcoinData() {
+                entry.date = currentDate
+                let next = Calendar.current.date(byAdding: .minute, value: 15, to: currentDate)!
+                let timeline = Timeline(entries: [entry], policy: .after(next))
+                completion(timeline)
+            }
         }
+    }
+}
 
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
+extension Provider {
+    private func fetchBitcoinData() async throws -> BitcoinEntry? {
+        let url = URL(string: API.bitcoin)!
+        // 네트워크 통신하기
+        let (data, _) = try await URLSession.shared.data(from: url)
+        // 통신한 결과를 JSON 파싱하기
+        guard let entrys = self.decode(of: [BitcoinEntry].self, with: data),
+              let bitcoinEntry = entrys.first else {
+            print("== nil")
+            return nil
+        }
+        print(bitcoinEntry)
+        return bitcoinEntry
+    }
+    
+    private func decode<T: Decodable>(of type: T.Type, with data: Data) -> T? {
+        let decoder = JSONDecoder()
+        return try? decoder.decode(type, from: data)
     }
 }

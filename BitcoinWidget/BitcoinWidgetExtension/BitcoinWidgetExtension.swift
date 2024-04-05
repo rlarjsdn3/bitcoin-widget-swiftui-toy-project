@@ -17,15 +17,17 @@ struct BitcoinWidgetExtension: Widget {
             provider: Provider()
         ) { entry in
             BitcoinWidgetView(entry: entry)
+                .containerBackground(Color.widgetBackground, for: .widget)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Bitcoin")
+        .description("This is an bitcoin widget.")
+        .supportedFamilies([.systemMedium])
     }
 }
 
-#Preview(as: .systemSmall) {
+#Preview(as: .systemMedium) {
     BitcoinWidgetExtension()
 } timeline: {
-    SimpleEntry(date: .now, emoji: "😀")
-    SimpleEntry(date: .now, emoji: "🤩")
+    BitcoinEntry()
+    BitcoinEntry()
 }

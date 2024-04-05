@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E097F4C2BBFC34700D4BD67 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E097F4B2BBFC34700D4BD67 /* URL.swift */; };
+		9E097F4D2BBFC36200D4BD67 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E097F4B2BBFC34700D4BD67 /* URL.swift */; };
+		9E097F4F2BBFCA1600D4BD67 /* Double+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E097F4E2BBFCA1600D4BD67 /* Double+Ext.swift */; };
+		9E097F502BBFCA6600D4BD67 /* Double+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E097F4E2BBFCA1600D4BD67 /* Double+Ext.swift */; };
 		9E20AA652BB816CB00654E2C /* BitcoinWidgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E20AA642BB816CB00654E2C /* BitcoinWidgetApp.swift */; };
 		9E20AA672BB816CB00654E2C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E20AA662BB816CB00654E2C /* ContentView.swift */; };
 		9E20AA692BB816CD00654E2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E20AA682BB816CD00654E2C /* Assets.xcassets */; };
@@ -49,6 +53,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9E097F4B2BBFC34700D4BD67 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		9E097F4E2BBFCA1600D4BD67 /* Double+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Ext.swift"; sourceTree = "<group>"; };
 		9E20AA612BB816CB00654E2C /* BitcoinWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitcoinWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E20AA642BB816CB00654E2C /* BitcoinWidgetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinWidgetApp.swift; sourceTree = "<group>"; };
 		9E20AA662BB816CB00654E2C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,6 +93,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E097F4A2BBFC33F00D4BD67 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				9E097F4B2BBFC34700D4BD67 /* URL.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		9E20AA582BB816CB00654E2C = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +123,7 @@
 		9E20AA632BB816CB00654E2C /* BitcoinWidget */ = {
 			isa = PBXGroup;
 			children = (
+				9E097F4A2BBFC33F00D4BD67 /* API */,
 				9E20AA642BB816CB00654E2C /* BitcoinWidgetApp.swift */,
 				9E86B3962BB8F7C900AA1F5E /* View */,
 				9E86B3972BB8F7D100AA1F5E /* Extension */,
@@ -161,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				9E86B3932BB8F71700AA1F5E /* Color+Ext.swift */,
+				9E097F4E2BBFCA1600D4BD67 /* Double+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -269,6 +285,8 @@
 				9E20AA672BB816CB00654E2C /* ContentView.swift in Sources */,
 				9E20AA652BB816CB00654E2C /* BitcoinWidgetApp.swift in Sources */,
 				9E86B3942BB8F71700AA1F5E /* Color+Ext.swift in Sources */,
+				9E097F4C2BBFC34700D4BD67 /* URL.swift in Sources */,
+				9E097F4F2BBFCA1600D4BD67 /* Double+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,7 +296,9 @@
 			files = (
 				9E86B39D2BB8F83200AA1F5E /* BitcoinWidgetView.swift in Sources */,
 				9E20AA802BB81B0600654E2C /* BitcoinWidgetExtension.swift in Sources */,
+				9E097F502BBFCA6600D4BD67 /* Double+Ext.swift in Sources */,
 				9E20AA7E2BB81B0600654E2C /* BitcoinWidgetExtensionBundle.swift in Sources */,
+				9E097F4D2BBFC36200D4BD67 /* URL.swift in Sources */,
 				9E86B3A02BB8F85300AA1F5E /* BitcoinWidgetProvider.swift in Sources */,
 				9E86B3952BB8F71A00AA1F5E /* Color+Ext.swift in Sources */,
 				9E86B39C2BB8F82F00AA1F5E /* BitcoinEntry.swift in Sources */,
