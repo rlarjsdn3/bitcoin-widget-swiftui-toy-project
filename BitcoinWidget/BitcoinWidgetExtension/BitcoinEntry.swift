@@ -7,6 +7,8 @@
 
 import WidgetKit
 
+// ⭐️ TimelineEntry 프로토콜은 date 프로퍼티를 구현
+// date 프로퍼티는 위젯을 업데이트할 시간을 의미
 struct BitcoinEntry: TimelineEntry, Decodable {
     var date: Date = Date()
     let currentPrice: Double

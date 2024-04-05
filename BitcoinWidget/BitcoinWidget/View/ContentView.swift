@@ -6,16 +6,17 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct ContentView: View {
+    
+    // MARK: - Body
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        Button("Reload Widget Timeline") {
+            // ⭐️ 앱 내 모든 위젯의 타임라인을 리로드함
+            WidgetCenter.shared.reloadAllTimelines()
         }
-        .padding()
+        .buttonStyle(.borderedProminent)
     }
 }
 

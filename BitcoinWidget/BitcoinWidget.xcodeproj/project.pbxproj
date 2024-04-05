@@ -123,10 +123,10 @@
 		9E20AA632BB816CB00654E2C /* BitcoinWidget */ = {
 			isa = PBXGroup;
 			children = (
-				9E097F4A2BBFC33F00D4BD67 /* API */,
 				9E20AA642BB816CB00654E2C /* BitcoinWidgetApp.swift */,
 				9E86B3962BB8F7C900AA1F5E /* View */,
 				9E86B3972BB8F7D100AA1F5E /* Extension */,
+				9E097F4A2BBFC33F00D4BD67 /* API */,
 				9E20AA682BB816CD00654E2C /* Assets.xcassets */,
 				9E20AA6A2BB816CD00654E2C /* Preview Content */,
 			);
